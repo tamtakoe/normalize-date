@@ -95,7 +95,7 @@ console.log(toDate('2000-01-05T23:59:59', {noTime: true}).valueOf() === toDate(n
 
 describe('Сomparison of equal dates with time', function() {
     function equalDate(date1, date2) {
-        return toDate(date1).valueOf() === toDate(date2).valueOf()
+        return toDate(date1).valueOf() === toDate(date2).valueOf();
     }
 
     checkDates(datesTime, equalDate);
@@ -103,7 +103,7 @@ describe('Сomparison of equal dates with time', function() {
 
 describe('Сomparison of dates with zero time with equal dates without time', function() {
     function equalDate(date1, date2) {
-        return toDate(date1).valueOf() === toDate(date2).valueOf()
+        return toDate(date1).valueOf() === toDate(date2).valueOf();
     }
 
     checkDates(datesZero, equalDate);
@@ -111,7 +111,7 @@ describe('Сomparison of dates with zero time with equal dates without time', fu
 
 describe('Сomparison of dates with time with equal dates without time in noTime mode', function() {
     function equalDate(date1, date2) {
-        return toDate(date1, {noTime: true}).valueOf() === toDate(date2, {noTime: true}).valueOf()
+        return toDate(date1, {noTime: true}).valueOf() === toDate(date2, {noTime: true}).valueOf();
     }
 
     checkDates(datesZero.concat(datesTime), equalDate);

@@ -19,8 +19,13 @@ npm install normalize-date
 ```js
 const toDate = require('normalize-date');
 
-toDate('2000-01-05T23:59:59.000Z').valueOf() === toDate('947105999.000').valueOf() //true
-toDate('2000-01-05T23:59:59', {noTime: true}).valueOf() === toDate(new Date(2000, 0, 5), {noTime: true}).valueOf() //true
+const date1 = toDate('2000-01-05T23:59:59.000Z');
+const date2 = toDate('947105999.000');
+date1.valueOf() === date2.valueOf() //true
+
+const date3 = toDate('2000-01-05T23:59:59', {noTime: true});
+const date4 = toDate(new Date(2000, 0, 5), {noTime: true});
+date3.valueOf() === date4.valueOf() //true
 
 //Some of possible formats
 toDate('2000-01-05') //ISO 8601
@@ -40,10 +45,10 @@ toDate(moment('2000-01-05T23:59:59.000')) //MomentJS date
 
 ### normalizeDate(date, [options])
 
-- **date** (`Any`) - Date as Date (or array with arguments), Moment, time, timestamp, ISO 8601, RFC 2822, Array ()
+- **date** (`Any`) - Date as JS Date (or array with arguments), Moment, time, timestamp, ISO 8601, RFC 2822
 
 - **options** (`Object`) - Options
-  * noTime (`Any`) - clear time
+  * noTime (`Boolean`) - clear time
 
 - **return** (`Date`) - Native JavaScript Date (in UTC)
 
