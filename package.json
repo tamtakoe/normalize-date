@@ -1,0 +1,51 @@
+{
+  "name": "normalize-date",
+  "description": "converts date from any format to native UTC JS Date",
+  "version": "0.0.0",
+  "author": {
+    "name": "Oleg Istomin",
+    "email": "tamtakoe@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tamtakoe/normalize-date.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "utc",
+    "date",
+    "time",
+    "timestamp",
+    "ISO8601",
+    "RFC2822",
+    "moment",
+    "normalize",
+    "convert"
+  ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "main": "./lib/normalize-date.js",
+  "files": [
+    "dist/",
+    "lib/",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "babel-cli": "6.9.0",
+    "babel-preset-es2015": "6.9.0",
+    "browserify": "13.0.1",
+    "uglify-js": "2.6.2",
+    "chai": "3.5.0",
+    "mocha": "2.4.5",
+    "moment": "2.14.1"
+  },
+  "scripts": {
+    "test": "mocha 'tests/**/*.js' --timeout 5000",
+    "babelify": "babel src --presets es2015 --out-dir lib",
+    "browserify": "browserify ./lib/normalize-date.js --standalone normalizeDate --outfile dist/normalize-date.js",
+    "minify": "uglifyjs dist/normalize-date.js --output dist/normalize-date.min.js",
+    "build": "npm run babelify && npm run browserify && npm run minify"
+  }
+}
