@@ -1,7 +1,7 @@
 {
   "name": "normalize-date",
   "description": "converts date from any format to native UTC JS Date",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Oleg Istomin",
     "email": "tamtakoe@gmail.com"
