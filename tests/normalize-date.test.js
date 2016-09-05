@@ -12,8 +12,8 @@ const datesTime = [
     'Sat Jan 05 2000 23:59:59',
     'Sat Jan 05 2000 23:59:59 GMT+0000',
     'Sat Jan 05 2000 22:59:59 GMT-0100',
-    947105999000,
-    '947105999.000',
+    947116799000,
+    '947116799.000',
     new Date(2000, 0, 5, 23, 59, 59, 0),
     [2000, 0, 5, 23, 59, 59, 0],
     moment('2000-01-05T23:59:59.000'),
@@ -23,7 +23,7 @@ const datesTime = [
     // moment('Sat Jan 05 2000 23:59:59'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
     // moment('Sat Jan 05 2000 23:59:59 GMT+0000'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
     // moment('Sat Jan 05 2000 22:59:59 GMT-0100'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
-    moment(947105999000),
+    moment(947116799000),
     moment(new Date(2000, 0, 5, 23, 59, 59, 0)),
     moment([2000, 0, 5, 23, 59, 59, 0])
 ];
@@ -36,8 +36,8 @@ const datesZero = [
     'Sat Jan 05 2000 00:00:00',
     'Sat Jan 05 2000 00:00:00 GMT+0000',
     'Sat Jan 04 2000 23:00:00 GMT-0100',
-    947019600000,
-    '947019600.000',
+    947030400000,
+    '947030400.000',
     new Date(2000, 0, 5, 0, 0, 0, 0),
     [2000, 0, 5, 0, 0, 0, 0],
     moment('2000-01-05T00:00:00.000'),
@@ -47,7 +47,7 @@ const datesZero = [
     // moment('Sat Jan 05 2000 00:00:00'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
     // moment('Sat Jan 05 2000 00:00:00 GMT+0000'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
     // moment('Sat Jan 04 2000 23:00:00 GMT-0100'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
-    moment(947019600000),
+    moment(947030400000),
     moment(new Date(2000, 0, 5, 0, 0, 0, 0)),
     moment([2000, 0, 5, 0, 0, 0, 0]),
 
@@ -58,8 +58,8 @@ const datesZero = [
     'Sat Jan 05 2000',
     'Sat Jan 05 2000 GMT+0000',
     // 'Sat Jan 05 2000 GMT-0100', //No sense
-    947019600000,
-    '947019600.000',
+    947030400000,
+    '947030400.000',
     new Date(2000, 0, 5),
     [2000, 0, 5],
     moment('2000-01-05'),
@@ -69,7 +69,7 @@ const datesZero = [
     // moment('Sat Jan 05 2000'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
     // moment('Sat Jan 05 2000 GMT+0000'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
     // moment('Sat Jan 05 2000 GMT-0100'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
-    moment(947019600000),
+    moment(947030400000),
     moment(new Date(2000, 0, 5)),
     moment([2000, 0, 5])
 ];
@@ -90,8 +90,6 @@ function checkDates(dates, comparator) {
     });
 
 }
-console.log(toDate('2000-01-05T23:59:59.000Z').valueOf() === toDate(947105999000).valueOf());
-console.log(toDate('2000-01-05T23:59:59', {noTime: true}).valueOf() === toDate(new Date(2000, 0, 5), {noTime: true}).valueOf());
 
 describe('Сomparison of equal dates with time', function() {
     function equalDate(date1, date2) {

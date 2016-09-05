@@ -20,8 +20,8 @@ function normalizeDateTime(date) {
     if (date === Object(date)) { //Native or Moment.js date
         var momentBaseDate = date.creationData && date.creationData().input;
 
-        if (!(momentBaseDate && typeof momentBaseDate === 'string' && /:.+Z|GMT|[+-]\d\d:\d\d/.test(momentBaseDate))) {
-            setTimezoneOffset(jsDate); //Any data except moment.js date from UTC string (UTC ISO format have to contains time)
+        if (!(momentBaseDate && (typeof momentBaseDate === 'number' || typeof momentBaseDate === 'string' && /:.+Z|GMT|[+-]\d\d:\d\d/.test(momentBaseDate)))) {
+            setTimezoneOffset(jsDate); //Any data except moment.js date from timestamp or UTC string (UTC ISO format have to contains time)
         }
 
         return jsDate;
@@ -31,10 +31,8 @@ function normalizeDateTime(date) {
         if (date.match(/Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec/) && date.indexOf('GMT') === -1) { //RFC without GMT
             setTimezoneOffset(jsDate);
         }
-    } else { //Timestamp
+    } else { //Timestamp (always in UTC)
         jsDate = new Date(Number(String(date).split('.').join('')));
-
-        setTimezoneOffset(jsDate);
     }
 
     return jsDate;
