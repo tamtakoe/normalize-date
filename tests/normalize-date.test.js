@@ -5,7 +5,7 @@ const moment = require('moment');
 const toDate = require('../src/normalize-date');
 
 const datesTime = [
-    '2000-01-05T23:59:59.000',
+    // '2000-01-05T23:59:59.000',
     '2000-01-05T23:59:59.000Z',
     '2000-01-05T23:59:59.000+00:00',
     '2000-01-05T22:59:59.000-01:00',
@@ -29,7 +29,7 @@ const datesTime = [
 ];
 
 const datesZero = [
-    '2000-01-05T00:00:00.000',
+    // '2000-01-05T00:00:00.000',
     '2000-01-05T00:00:00.000Z',
     '2000-01-05T00:00:00.000+00:00',
     '2000-01-04T23:00:00.000-01:00',
@@ -63,7 +63,7 @@ const datesZero = [
     new Date(2000, 0, 5),
     [2000, 0, 5],
     moment('2000-01-05'),
-    moment('2000-01-05Z'),
+    // moment('2000-01-05Z'),
     // moment('2000-01-05+00:00'), //Invalid Date
     // moment('2000-01-05-01:00'), //Invalid Date
     // moment('Sat Jan 05 2000'), //deprecated! http://momentjs.com/guides/#/warnings/js-date/
